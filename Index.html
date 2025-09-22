@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Test de Web</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+header {
+    background-color: black;
+    padding: 20px;
+}
+header h1 {
+    color: blueviolet;
+    margin: 0;
+    font-size: 30px;
+}
+.imagenfondo {
+    position: relative;
+    padding: 300px 0;
+}
+.imagenfondo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: auto;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.contenido {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: inline-block;
+    padding: 20px;
+    border-radius: 10px;
+}
+p {
+    font-size: 14px;
+    color: black;
+}
+#p2 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+button {
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: green;
+    border: none;
+    color: black;
+    cursor: pointer;
+}
+button:hover {
+    background-color:blueviolet;
+}
+#sliderContainer {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(255,255,255,0.5);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 2;
+}
+#sliderContainer input {
+    width: 100px;
+}
+</style>
+</head>
+<body>
+<header>
+    <h1>Hola, esto es solo un test de mi primera vez intentando hacer una web</h1>
+</header>
+<div id="sliderContainer">
+    <label for="opacidad"></label>
+    <input type="range" id="opacidad" min="0" max="100" value="0">
+</div>
+<div class="imagenfondo" id="fondoImagen">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Pedro_S%C3%A1nchez_in_2023.jpg" id="imagenFondo">
+    <div class="contenido">
+        <p>Si, me aburro mucho en mi casa y estoy aprendiendo a hacer webs</p>
+        <p id="p2">Pulsa este botón para ver imagenes der beti</p>
+        <button id="Betih">Betih</button>
+    </div>
+</div>
+<script>
+const button = document.getElementById("Betih");
+button.addEventListener("click", () => {
+    window.location.href = "https://www.google.com/search?q=betih&sca_esv=41019ffbed8a8b36&udm=2&biw=1366&bih=641&ei=yrTRaLT2DbihkdUPmMLy6AY&ved=0ahUKEwi0g4vnne2PAxW4UKQEHRihHG0Q4dUDCHE&uact=5&oq=betih&gs_lp=Egtnd3Mtd2l6LWltZyIFYmV0aWgyBRAAGIAEMgcQABiABBgKMgcQABiABBgKMgcQABiABBgKMgoQABiABBixAxgKMgcQABiABBgKMgcQABiABBgKMgcQABiABBgKMgcQABiABBgKMgcQABiABBgKSP0JUIcGWJ0IcAF4AJABAJgBRaABhgGqAQEyuAEDyAEA-AEBmAIDoAKbAcICBhAAGAcYHsICDRAAGIAEGLEDGEMYigXCAg4QABiABBixAxiDARiKBcICCBAAGIAEGLEDwgIEEAAYA8ICChAAGIAEGEMYigWYAwCIBgGSBwEzoAfJCrIHATK4B5EBwgcFMi0yLjHIBxI&sclient=gws-wiz-img";
+});
+const slider = document.getElementById("opacidad");
+const imagen = document.getElementById("imagenFondo");
+slider.addEventListener("input", () => {
+    imagen.style.opacity = slider.value / 100;
+});
+</script>
+</body>
+</html>
